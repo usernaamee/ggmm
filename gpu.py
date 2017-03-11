@@ -598,7 +598,7 @@ class GMM(object):
                     axis=0).asarray()[0, 0]
                 log_likelihood.append(curr_log_likelihood_sum)
                 if i > 0:
-                    change = log_likelihood[-1] - log_likelihood[-2]
+                    change = np.abs(log_likelihood[-1] - log_likelihood[-2])
                 else:
                     change = np.inf
                 if verbose:
